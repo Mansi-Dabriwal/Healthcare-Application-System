@@ -1,0 +1,25 @@
+{
+  "name": "web_project",
+  "version": "1.0.0",
+  "description": "Web app for mental health doctor appointments",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon app.js"
+  },
+  "author": "Kirubagar Thiagarajan",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.7.0",
+    "mongoose": "^6.7.1",
+    "nodemon": "^2.0.20",
+    "router": "^1.3.7"
+  }
+}
