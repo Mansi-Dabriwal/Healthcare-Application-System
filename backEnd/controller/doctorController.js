@@ -1,4 +1,4 @@
-import * as patientService from '../service/patientService.js'
+import * as doctorService from '../service/doctorService.js'
 
 const setResponse = (obj, response) => {
     response.status(200);
@@ -11,10 +11,10 @@ const setError = (err, response) => {
     response.json(err);
 }
 
-export const createPatient = async (req, res) => {
+export const createDoctor = async (req, res) => {
     try {
-        console.log("creating patient!")
-        const user = await patientService.save(req, res);
+        console.log("creating doctor!")
+        const user = await doctorService.save(req, res);
     } catch (error) {
         setError(error, res)
     }
@@ -22,7 +22,7 @@ export const createPatient = async (req, res) => {
 
 export const getAll = async (req, res) => {
     try {
-        const user = await patientService.getAll(req, res);
+        const user = await doctorService.getAll(req, res);
     } catch (error) {
         setError(error, res)
     }
@@ -32,7 +32,7 @@ export const getAll = async (req, res) => {
 
 export const login = async (req, res) => {
     try {
-        const user = await patientService.login(req, res);
+        const user = await doctorService.login(req, res);
     } catch (error) {
         setError(error, res)
     }

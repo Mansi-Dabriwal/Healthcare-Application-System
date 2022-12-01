@@ -7,5 +7,6 @@ import * as patientController from '../controller/patientController.js'
 console.log("in patientRouter")
 patientRouter.post("/create", patientController.createPatient);
 patientRouter.get("/getAll", patientController.getAll);
+patientRouter.post("/login", patientController.login);
 // patientRouter.get("/login", patientController.login)
 export default patientRouter;
