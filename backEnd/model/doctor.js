@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 //Defining the Schema for the employee
 const doctorSchema = new mongoose.Schema({
     fullName: {
@@ -63,5 +63,5 @@ export const validate = (data) => {
     return schema.validate(data);
 };
 
-const Doctor = mongoose.model('Doctor', doctorSchema);
-module.exports = { Doctor };
+export const Doctor = mongoose.model('Doctor', doctorSchema);
+export default { Doctor };
