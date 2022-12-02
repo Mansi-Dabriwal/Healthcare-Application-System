@@ -4,6 +4,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import '../styles/Navbarcomp.css'
+import { Link } from "react-router-dom";
+import Home from '../pages/Home';
+import About from '../pages/About';
 
 function Navbarcomp() {
   return (
@@ -18,19 +21,11 @@ function Navbarcomp() {
       <div class="collapse navbar-collapse" id="navmenu">
         <ul class="navbar-nav ms-auto nav-pills">
           <li class="nav-item">
-            <a href="#scrollspyHeading1" class="nav-link">Home</a>
+          {/* <Link to="/Home" href="#scrollspyHeading1" class="nav-link" > Home </Link>  */}
+            <a href="Home" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <a href="#about" class="nav-link">About</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Products
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#products">Medicine</a></li>
-              <li><a class="dropdown-item" href="#products">Equipments</a></li>
-            </ul>
+            <a href="About" class="nav-link">About</a>
           </li>
           <li class="nav-item">
             <a href="#questions" class="nav-link">FAQ</a>
@@ -39,7 +34,13 @@ function Navbarcomp() {
             <a href="#testimonials" class="nav-link">Testimonials</a>
           </li>
           <li class="nav-item">
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Login</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Get Started</a>
           </li>
         </ul>
       </div>

@@ -51,9 +51,27 @@ body::before {
   .btn-primary{
     background-color: #3e78b2;
     color: #fff;
+    
   }
-  
+  button{
+    margin: 13px 12px 12px 10px;
+  }
   .btn-primary:hover{
     background-color: #fff;
     color: #000;
   }
+ .Acc {
+  text-align: left;
+  margin: 7%;
+  }
+  .lead{
+    text-align: left;
+    margin-top: 4%;
+  }
+  .head{
+    text-align: left;
+  }
+  .faq{
+    margin-top: 4%;
+  }
+  
