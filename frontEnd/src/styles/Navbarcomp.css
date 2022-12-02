@@ -58,3 +58,10 @@ body::before {
   background-color: #fff;
   color: #000;
 }
+.dropdown-menu a{
+  text-decoration: none;
+  color: black;
+}
+.login{
+  border: none;
+}
