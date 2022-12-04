@@ -95,6 +95,22 @@ export const save = async (req, res) => {
         return res.status(400).send({ message: "Address is required!" });
     }
 
+    if (!req.body.state) {
+        validator = false;
+        return res.status(400).send({ message: "State is required!" });
+    }
+
+
+    if (!req.body.country) {
+        validator = false;
+        return res.status(400).send({ message: "Country is required!" });
+    }
+
+    if (!req.body.preferredLanguage) {
+        validator = false;
+        return res.status(400).send({ message: "Preferred is required!" });
+    }
+
     if (!req.body.therapyType) {
         validator = false;
         return res.status(400).send({ message: "Therapy type is required!" });
@@ -143,6 +159,43 @@ export const save = async (req, res) => {
         validator = false;
         return res.status(400).send({ message: "Currently Tired is required!" });
     }
+
+    if (!req.body.poorAppetiteOrOvereating) {
+        validator = false;
+        return res.status(400).send({ message: "Poor Appetite Or Overeating is required!" });
+    }
+
+    if (!req.body.currentlyEmployed) {
+        validator = false;
+        return res.status(400).send({ message: "Currently Employed is required!" });
+    }
+
+    if (!req.body.intimacyProblems) {
+        validator = false;
+        return res.status(400).send({ message: "Intimacy Problems is required!" });
+    }
+
+    if (!req.body.alcoholFrequency) {
+        validator = false;
+        return res.status(400).send({ message: "Alcohol Frequency is required!" });
+    }
+
+    if (!req.body.medicationHistory) {
+        validator = false;
+        return res.status(400).send({ message: "Medication History is required!" });
+    }
+
+    if (!req.body.chronicPain) {
+        validator = false;
+        return res.status(400).send({ message: "Chronic Pain is required!" });
+    }
+
+    if (!req.body.financialStatus) {
+        validator = false;
+        return res.status(400).send({ message: "Financial Status is required!" });
+    }
+
+
 
 
 
