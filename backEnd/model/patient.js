@@ -35,6 +35,18 @@ const patientSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    state: {
+        type: String,
+        required: true
+    },
+    country: {
+        type: String,
+        required: true
+    },
+    preferredLanguage: {
+        type: String,
+        required: true
+    },
     therapyType: {
         type: String,
         required: true
@@ -74,7 +86,45 @@ const patientSchema = new mongoose.Schema({
     currentlyTired: {
         type: String,
         required: true
+    },
+    poorAppetiteOrOvereating: {
+        type: String,
+        required: true
+    },
+    currentlyEmployed: {
+        type: String,
+        required: true
+    },
+    intimacyProblems: {
+        type: String,
+        required: true
+    },
+    alcoholFrequency: {
+        type: String,
+        required: true
+    },
+    medicationHistory: {
+        type: String,
+        required: true
+    },
+    chronicPain: {
+        type: String,
+        required: true
+    },
+    financialStatus: {
+        type: String,
+        required: true
+    },
+    assignedDoctor: {
+        type: String,
+        required: false
+    },
+    paymentMethod: {
+        type: String,
+        required: false
     }
+
+
 });
 
 export const Patient = mongoose.model('Patient', patientSchema);
