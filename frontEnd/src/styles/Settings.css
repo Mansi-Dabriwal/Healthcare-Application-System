@@ -1,0 +1,43 @@
+.therapist, .loginInfo, .paymentSet, .formP, .Profilepic, .quitT {
+    padding: 30px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    clear: both;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.settingsB{ 
+    background-color: #F5F5F5;
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto; 
+  }
+
+.mainDiv{
+    background-color: #F5F5F5;
+}
+
+.btn {
+    font-size: 16px;
+    border-width: 2px;
+    height: 35px;
+    line-height: 31px;
+    padding: 0 17.5px;
+}
+.btn-default {
+    color: #FFFFFF;
+    background-color: #5faa41;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: #FFFFFF;
+    background-color: #E36039;
+    border-color: transparent;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
