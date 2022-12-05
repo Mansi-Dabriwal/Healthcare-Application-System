@@ -103,6 +103,7 @@ export const save = async (req, res) => {
 
 
 export const login = async (req, res) => {
+    console.log("trying to login")
     let user = req.body;
 
     Doctor.find({ email: user.email }, async (err, data) => {

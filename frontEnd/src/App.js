@@ -7,6 +7,8 @@ import About from './pages/About';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Logindoc from './pages/Logindoc';
 import LoginPatient from './pages/LoginPatient';
+import DoctorPortal from './pages/DoctorPortal';
+import Payment from './pages/Payment';
 function App() {
   return (
     <div className="App">
@@ -18,6 +20,8 @@ function App() {
                         <Route path='/About' element={<About/>} />
                         <Route path='/Logindoc' element={<Logindoc/>} />
                         <Route path='/LoginPatient' element={<LoginPatient/>} />
+                        <Route path='/DoctorPortal' element={<DoctorPortal/>}/>
+                        <Route path='/Payment' element={<Payment/>}/>
                         
                         
      </Routes>
