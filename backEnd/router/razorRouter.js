@@ -5,8 +5,8 @@ import * as razorController from '../controller/razorController.js'
 
 
 console.log("in razorRouter")
-patientRouter.get("/get-razorpay-key", razorController.getRazorPayKey);
-patientRouter.post("/create-order", razorController.createOrder);
-patientRouter.post("/pay-order", razorController.payOrder);
-patientRouter.get("/list-orders", razorController.listOrder);
-export default patientRouter;
+razorRouter.get("/get-razorpay-key", razorController.getRazorPayKey);
+razorRouter.post("/create-order", razorController.createOrder);
+razorRouter.post("/pay-order", razorController.payOrder);
+razorRouter.get("/list-orders", razorController.listOrder);
+export default razorRouter;

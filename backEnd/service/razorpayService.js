@@ -1,4 +1,5 @@
 import { Order } from "../model/order.js";
+import Razorpay from "razorpay";
 
 export const getRazorPayKey = (req, res) => {
     res.send({ key: process.env.RAZORPAY_KEY_ID });
