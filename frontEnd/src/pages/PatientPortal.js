@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Calendar } from 'react-calendar';
-import PatientNavBar from '../components/PatientNavBar';
+// import PatientNavBar from '../components/PatientNavBar';
 // import 'react-calendar/dist/Calendar.css';
 import '../styles/PatientPortal.css'
 // import { Navbar } from 'react-bootstrap';
@@ -8,7 +8,7 @@ import '../styles/PatientPortal.css'
 function PatientPortal() {
     return (
       <div>
-        <PatientNavBar></PatientNavBar><br></br>
+        {/* <PatientNavBar></PatientNavBar><br></br> */}
         <div><br></br>
           <h3 style={{"textAlign":"center"}}>Welcome to DOC101!</h3><br></br>
           <h4>What is the therapy process?</h4>
