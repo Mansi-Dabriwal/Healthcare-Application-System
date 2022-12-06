@@ -46,6 +46,21 @@ export const login = async (req, res) => {
 }
 
 
+export const feedback = async (req, res) => {
+    let user = req.body;
+    Patient.find({ email: user.email }, async (err, data) => {
+        if (data.length < 1) {
+            return res.status(404).send({ message: "Patient with given mail Id is not found!" })
+        }
+        else {
+            let patient = data[0];
+            let feedback = user.feedback;
+            await sendEmail('doc101team@gmail.com', `Feedback from ${patient.fullName}! (Mail : ${patient.email})`, feedback);
+        }
+    })
+}
+
+
 export const save = async (req, res) => {
     let validator = true;
     let stringRegex = /^[a-zA-Z]+ [a-zA-Z]+$/;

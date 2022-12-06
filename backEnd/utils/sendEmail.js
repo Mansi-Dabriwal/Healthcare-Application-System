@@ -13,7 +13,7 @@ export const sendEmail = async (email, subject, text) => {
         });
 
         let mailDetails = {
-            from: 'docs101team@gmail.com',
+            from: 'doc101team@gmail.com',
             to: email,
             subject: subject,
             text: text,
@@ -33,5 +33,7 @@ export const sendEmail = async (email, subject, text) => {
         return error;
     }
 };
+
+
 
 export default sendEmail;
