@@ -37,3 +37,13 @@ export const login = async (req, res) => {
         setError(error, res)
     }
 }
+
+export const doctorByPreference = async (req, res) => {
+    try {
+        const user = await doctorService.doctorByPreference(req, res);
+    } catch (error) {
+        setError(error, res)
+    }
+}
+
+

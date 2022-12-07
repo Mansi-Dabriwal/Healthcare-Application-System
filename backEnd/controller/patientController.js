@@ -45,3 +45,13 @@ export const feedback = async (req, res) => {
         setError(error, res)
     }
 }
+
+export const bookAppointment = async (req, res) => {
+    try {
+        const user = await patientService.bookAppointment(req, res);
+    } catch (error) {
+        setError(error, res)
+    }
+}
+
+

@@ -9,4 +9,5 @@ patientRouter.post("/create", patientController.createPatient);
 patientRouter.get("/getAll", patientController.getAll);
 patientRouter.post("/login", patientController.login);
 patientRouter.post("/feedback", patientController.feedback);
+patientRouter.post("/bookAppointment", patientController.bookAppointment);
 export default patientRouter;
