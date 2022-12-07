@@ -5,8 +5,6 @@ import cors from 'cors';
 import dotenv from 'dotenv'
 import connectDatabase from './config/db.js';
 
-
-
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded());
@@ -16,7 +14,4 @@ routes(app);
 
 dotenv.config({ path: './config/config.env' });
 connectDatabase();
-
-
-
 app.listen(4000);

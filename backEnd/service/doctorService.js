@@ -131,3 +131,18 @@ export const login = async (req, res) => {
 
     })
 }
+
+export const doctorByPreference = async (req, res) => {
+    let user = req.body;
+
+    Doctor.find({ expertise: user.preference }, async (err, data) => {
+        console.log("..." + data);
+        if (data.length < 1) {
+            return res.status(404).send({ message: "Doctor with given expertise is not found!" })
+        }
+        else {
+            return res.status(200).send({ doctorList: data });
+        }
+
+    })
+}
