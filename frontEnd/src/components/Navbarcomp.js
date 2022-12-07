@@ -14,7 +14,7 @@ function Navbarcomp() {
   return (
     <nav id="navbar-example2" class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
       <div class="container">
-        <a href="#" class="navbar-brand">Doc101</a>
+        <a href="Home" class="navbar-brand">Doc101</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
           <span class="navbar-toggler-icon"></span>
@@ -29,14 +29,14 @@ function Navbarcomp() {
             <li class="nav-item">
               <a href="About" class="nav-link">About</a>
             </li>
-            <li class="nav-item">
+            {/* <li class="nav-item">
               <a href="#questions" class="nav-link">FAQ</a>
+            </li> */}
+            <li class="nav-item">
+              <a href="Testimonials" class="nav-link">Testimonials</a>
             </li>
             <li class="nav-item">
-              <a href="#testimonials" class="nav-link">Testimonials</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Contact</a>
+              <a href="Contact" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
               <a class="btn btn-primary dropdown-toggle login" data-toggle="dropdown">Login</a>
