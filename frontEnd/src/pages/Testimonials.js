@@ -7,6 +7,7 @@ import Footer from "../components/Footercomp";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import { Link } from "react-router-dom";
 
 function Testimonials() {
   return (
@@ -469,13 +470,11 @@ function Testimonials() {
               {/* <h2 class="head">Our Testimonials</h2> */}
               <p class="lead">
                 If you are in a crisis or any other person may be in danger -
-                don't use this site. These{" "}
+                don't use this site. Call{" "}
                 <span>
-                  <a href="../Images/Resources.pdf" download>
-                    resources
-                  </a>
+                  <strong>911</strong>
                 </span>{" "}
-                can provide you with immediate help.
+                they can provide you with immediate help.
               </p>
             </div>
           </div>

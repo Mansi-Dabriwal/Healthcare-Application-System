@@ -13,6 +13,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Logindoc from "./pages/Logindoc";
 import LoginPatient from "./pages/LoginPatient";
 import Survey from "./pages/Survey";
+// import Resources from "./pages/Resources";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/patientP" element={<PatientP />} />
           <Route path="/PatientSignUp" element={<PatientSignUp />} />
           <Route path="/Survey" element={<Survey />} />
+          {/* <Route path="/Resources" element={<Resources />} /> */}
         </Routes>
       </Router>
     </div>
