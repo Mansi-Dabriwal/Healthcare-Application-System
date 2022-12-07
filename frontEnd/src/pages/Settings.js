@@ -1,12 +1,12 @@
 import React from 'react'
-// import PatientNavBar from '../components/PatientNavBar';
+import PatientNavBar from '../components/PatientNavBar';
 import Card from 'react-bootstrap/Card';
 import '../styles/Settings.css'
 
 export default function Settings() {
   return (
     <div className='mainDiv'>
-      {/* <PatientNavBar></PatientNavBar> */}
+      <PatientNavBar></PatientNavBar>
       <div className='settingsB'>
           <br></br>
           <h3>Account Settings</h3><br></br>
