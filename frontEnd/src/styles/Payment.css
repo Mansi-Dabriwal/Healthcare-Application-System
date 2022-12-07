@@ -1,0 +1,16 @@
+.list-orders{
+    max-width:600px;
+    margin: 0 auto;
+}
+.btn {
+    font-size: 16px;
+    border-width: 2px;
+    height: 35px;
+    line-height: 31px;
+    padding: 0 17.5px;
+}
+.btn-default {
+    color: #FFFFFF;
+    background-color: #5faa41;
+    border-color: transparent;
+}
