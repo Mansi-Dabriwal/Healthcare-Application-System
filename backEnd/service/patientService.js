@@ -1,4 +1,5 @@
 import { Patient } from "../model/patient.js";
+import { Doctor } from "../model/doctor.js";
 import bcrypt from 'bcrypt'
 const userName = "";
 
@@ -56,9 +57,30 @@ export const feedback = async (req, res) => {
             let patient = data[0];
             let feedback = user.feedback;
             await sendEmail('doc101team@gmail.com', `Feedback from ${patient.fullName}! (Mail : ${patient.email})`, feedback);
+            return res.status(200).send({ message: "Feedback mail sent to the Team!" })
         }
     })
 }
+
+export const bookAppointment = async (req, res) => {
+    let payload = req.body;
+    console.log(payload);
+    let appointment = { patientEmail: payload.patientEmail, doctorEmail: payload.doctorEmail, dateAndTime: payload.dateAndTime };
+    Patient.findOneAndUpdate({ email: payload.patientEmail }, { $push: { "bookingDetails": appointment } });
+    let patient = await Patient.findOne({ email: payload.patientEmail });
+    let booking = patient.bookingDetails;
+    booking.push(appointment);
+    console.log(booking)
+    await Patient.findOneAndUpdate({ email: payload.patientEmail }, { bookingDetails: booking });
+    let doctor = await Doctor.findOne({ email: payload.doctorEmail });
+    console.log(doctor)
+    let patientAppointment = doctor.appointmentPatient;
+    patientAppointment.push(patient);
+    await Doctor.findOneAndUpdate({ email: payload.doctorEmail }, { appointmentPatient: patientAppointment });
+    return res.status(200).send({ message: "Appointment booked!" })
+}
+
+
 
 
 export const save = async (req, res) => {

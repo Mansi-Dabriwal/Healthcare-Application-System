@@ -115,12 +115,12 @@ const patientSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    assignedDoctor: {
+    paymentMethod: {
         type: String,
         required: false
     },
-    paymentMethod: {
-        type: String,
+    bookingDetails: {
+        type: Array,
         required: false
     }
 

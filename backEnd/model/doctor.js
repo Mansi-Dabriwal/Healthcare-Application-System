@@ -43,6 +43,10 @@ const doctorSchema = new mongoose.Schema({
     expertise: {
         type: String,
         required: true
+    },
+    appointmentPatient: {
+        type: Array,
+        required: false
     }
 });
 
