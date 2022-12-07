@@ -6,6 +6,7 @@ export const getRazorPayKey = (req, res) => {
 };
 
 export const createOrder = async (req, res) => {
+    console.log(req.body);
     try {
         const instance = new Razorpay({
             key_id: process.env.RAZORPAY_KEY_ID,
@@ -30,7 +31,7 @@ export const payOrder = async (req, res) => {
             req.body;
         const newOrder = Order({
             isPaid: true,
-            amount: amount,
+            amount: amount/100,
             razorpay: {
                 orderId: razorpayOrderId,
                 paymentId: razorpayPaymentId,
