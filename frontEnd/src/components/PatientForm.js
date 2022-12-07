@@ -8,6 +8,7 @@ import FormStepSix from "./FormStepSix";
 import Success from './Success';
 import Navbar from "./Navbarcomp";
 import './FormStyles.css'
+import PatientSignUp from "../pages/PatientSignUp";
 
 export class PatientForm extends Component {
     state = {
@@ -23,12 +24,25 @@ export class PatientForm extends Component {
         reasonForTherapy: "",
         sleepProblems: "",
         currentlyTired: "",
-        medication: "",
         chronicPain: "",
         financialStatus: "",
         country: "",
         state: "",
-        language: ""
+        preferredLanguage: "",
+        therapyType: "individual",
+        fullName: "",
+        email: "",
+        password: "",
+        phone: "",
+        address: "",
+        currentlyDepressed: "",
+        poorAppetiteOrOvereating: "",
+        currentlyEmployed: "",
+        intimacyProblems: "",
+        alcoholFrequency: "",
+        medicationHistory: "",
+        assignedDoctor: "no",
+        paymentMethod: "online"
     };
     // Go to next step
     nextStep = () => {
@@ -45,11 +59,6 @@ export class PatientForm extends Component {
             step: step - 1
         });
     };
-    firstStep = () => {
-        this.setState({
-            step: 1
-        });
-    };
     // Handle fields change
     handleChange = (input) => (e) => {
         this.setState({ [input]: e.target.value });
@@ -58,10 +67,10 @@ export class PatientForm extends Component {
     render() {
         const { step } = this.state;
         const { gender, age, sexualOrientation, relationStatus, beenInTherapy, therapistPreference, rateHealth,
-            eatingHabits, reasonForTherapy, sleepProblems, currentlyTired, medication, chronicPain, financialStatus, country, state, language } = this.state;
+            eatingHabits, reasonForTherapy, sleepProblems, currentlyTired, medicationHistory, chronicPain, financialStatus, country, state, preferredLanguage, therapyType, fullName, email, password, phone, address, currentlyDepressed,poorAppetiteOrOvereating, currentlyEmployed, intimacyProblems, alcoholFrequency, assignedDoctor,paymentMethod } = this.state;
         const values = {
             gender, age, sexualOrientation, relationStatus, beenInTherapy, therapistPreference, rateHealth,
-            eatingHabits, reasonForTherapy, sleepProblems, currentlyTired, medication, chronicPain, financialStatus, country, state, language
+            eatingHabits, reasonForTherapy, sleepProblems, currentlyTired, medicationHistory, chronicPain, financialStatus, country, state, preferredLanguage, therapyType, fullName, email, password, phone, address, currentlyDepressed,poorAppetiteOrOvereating, currentlyEmployed, intimacyProblems, alcoholFrequency, assignedDoctor,paymentMethod
         };
         let title = "Help us match you to the right therapist."
 
@@ -146,7 +155,20 @@ export class PatientForm extends Component {
                 return (
                     <>
                         <Navbar></Navbar>
-                        <Success />
+                        <Success nextStep={this.nextStep}
+                                prevStep={this.prevStep}
+                                handleChange={this.handleChange}
+                                values={values} />
+                    </>
+                )
+            case 8: 
+                return (
+                    <>
+                        <Navbar></Navbar>
+                        <PatientSignUp nextStep={this.nextStep}
+                                prevStep={this.prevStep}
+                                handleChange={this.handleChange}
+                                values={values} />
                     </>
                 )
             //

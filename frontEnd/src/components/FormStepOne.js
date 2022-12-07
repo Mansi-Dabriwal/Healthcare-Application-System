@@ -57,6 +57,22 @@ export class FormStepOne extends Component {
           defaultValue={values.relationStatus}
         />
         <br />
+        <TextField
+          fullWidth
+          label="What is your Phone number?"
+          hintText="What is your Phone number?"
+          onChange={handleChange("phone")}
+          defaultValue={values.phone}
+        />
+        <TextField
+          fullWidth
+          label="What is you home address?"
+          hintText="What is you home address?"
+          onChange={handleChange("address")}
+          defaultValue={values.address}
+        />
+        <br />
+        <br />
         <br />
         <div style={{float: "right"}}>
         <Button

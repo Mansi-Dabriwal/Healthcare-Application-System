@@ -49,8 +49,8 @@ export class FormStepSix extends Component {
         fullWidth
           label="What is your preferred language?"
           hintText="What is your preferred language?"
-          onChange={handleChange("language")}
-          defaultValue={values.language}
+          onChange={handleChange("preferredLanguage")}
+          defaultValue={values.preferredLanguage}
         />
         <br />
         <br />

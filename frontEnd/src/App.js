@@ -10,7 +10,8 @@ import LoginPatient from './pages/LoginPatient';
 import PatientPortal from './pages/PatientPortal';
 import Settings from './pages/Settings';
 import PatientP from './pages/PatientP';
-import PatientForm from './components/PatientForm'
+import PatientForm from './components/PatientForm';
+import PatientSignUp from './pages/PatientSignUp';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/patientP" element={<PatientP />} />
           <Route path="/patient-form" element={<PatientForm />} />
-
+          <Route path="/patientSignUp" element={<PatientSignUp/>} />
         </Routes>
       </Router>
     </div>

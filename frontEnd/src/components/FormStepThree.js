@@ -60,6 +60,14 @@ export class FormStepThree extends Component {
           onChange={handleChange("currentlyTired")}
           defaultValue={values.currentlyTired}
         />
+        <br/>
+        <TextField
+        fullWidth
+        label="Are you experiencing Feeling depressed?"
+        hintText="Are you experiencing Feeling depressed"
+        onChange={handleChange("currentlyDepressed")}
+        defaultValue={values.currentlyDepressed}
+        />
         <br />
         <br />
         <div style={{float: "right"}}>

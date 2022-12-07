@@ -33,32 +33,32 @@ export class FormStepFour extends Component {
         fullWidth
           label="How often have you been bothered by Poor appetite or overeating?"
           hintText="How often have you been bothered by Poor appetite or overeating?"
-          onChange={handleChange("appetite")}
-          defaultValue={values.appetite}
+          onChange={handleChange("poorAppetiteOrOvereating")}
+          defaultValue={values.poorAppetiteOrOvereating}
         />
         <br />
         <TextField
         fullWidth
           label="Are you currently employed?"
           hintText="Are you currently employed?"
-          onChange={handleChange("employed")}
-          defaultValue={values.employed}
+          onChange={handleChange("currentlyEmployed")}
+          defaultValue={values.currentlyEmployed}
         />
         <br />
         <TextField
         fullWidth
           label="Do you have any problems with intimacy?"
           hintText="Do you have any problems with intimacy?"
-          onChange={handleChange("intimacy")}
-          defaultValue={values.intimacy}
+          onChange={handleChange("intimacyProblems")}
+          defaultValue={values.intimacyProblems}
         />
         <br />
         <TextField
         fullWidth
           label="How often do you drink alcohol?"
           hintText="How often do you drink alcohol?"
-          onChange={handleChange("alcohol")}
-          defaultValue={values.alcohol}
+          onChange={handleChange("alcoholFrequency")}
+          defaultValue={values.alcoholFrequency}
         />
         <br />
         <br />

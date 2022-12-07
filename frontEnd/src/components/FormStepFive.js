@@ -33,8 +33,8 @@ export class FormStepFive extends Component {
         fullWidth
           label="Are you taking any medication?"
           hintText="Are you taking any medication?"
-          onChange={handleChange("medication")}
-          defaultValue={values.medication}
+          onChange={handleChange("medicationHistory")}
+          defaultValue={values.medicationHistory}
         />
         <br />
         <TextField

@@ -47,7 +47,7 @@ export class FormStepTwo extends Component {
         <br />
         <TextField
         fullWidth
-          label="What are your exp from therapist?"
+          label="What are your expectations from therapist?"
           hintText="What are your exp from therapist?"
           onChange={handleChange("therapistPreference")}
           defaultValue={values.therapistPreference}
