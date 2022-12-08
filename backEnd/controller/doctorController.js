@@ -46,4 +46,12 @@ export const doctorByPreference = async (req, res) => {
     }
 }
 
+export const diagnosePatient = async (req, res) => {
+    try {
+        const user = await doctorService.diagnosePatient(req, res);
+    } catch (error) {
+        setError(error, res)
+    }
+}
+
 
