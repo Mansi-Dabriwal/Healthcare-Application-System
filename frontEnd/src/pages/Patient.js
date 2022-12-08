@@ -90,7 +90,7 @@ export default function Patient() {
                   <td>{data.rating}</td>
                   <td>{data.specialisation}</td>
                   <td>{data.expertise}</td>
-                  <td><button onClick={() => getRowData(data)}>Select</button></td>
+                  <td><button onClick={() => getRowData(data)} className="btn btn-primary">Select</button></td>
                 </tr>
               )
             })}

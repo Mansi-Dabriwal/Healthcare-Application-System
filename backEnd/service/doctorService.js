@@ -159,6 +159,9 @@ export const diagnosePatient = async (req, res) => {
     let patientResponse = await Patient.findOne({ email: payLoad.patientEmail });
     let bookings = patientResponse.bookingDetails.filter(booking => booking.dateAndTime != payLoad.dateAndTime);
     let diagnose = { medicationType: payLoad.medicationType, medicine1: payLoad.medicine1, medicine2: payLoad.medicine2, remarks: payLoad.remarks, doctorName: doctorName, date: payLoad.date };
+    console.log(diagnose);
+
     await Patient.findOneAndUpdate({ email: payLoad.patientEmail }, { lastDiagnose: diagnose, bookingDetails: bookings });
+    console.log("hi");
     return res.status(200).send({ message: "Patient diagnosed successfully!" });
 }

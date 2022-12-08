@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card';
 import '../styles/Settings.css'
 
 export default function Settings() {
+  let patientData = JSON.parse(localStorage.getItem("EntirePatientDetails"));
+  console.log(patientData)
   return (
     <div className='mainDiv'>
       <PatientNavBar></PatientNavBar>
@@ -12,12 +14,11 @@ export default function Settings() {
           <h3>Account Settings</h3><br></br>
           <Card body className='loginInfo'>
             <h4>Login Information</h4><br></br>
-            mansidabriwal@gmail.com  
+            {patientData.email}  
           </Card>
           <Card body className='therapist'>
             <h4>Your therapist</h4><br></br>
-            You are currently working with Dylan Ferreira LMHC.<br></br>
-            Change therapist 
+            You are currently working with {patientData?.lastDiagnose?.doctorName}.<br></br> 
           </Card>
           <Card body className='paymentSet'>
             <h4>Payment settings</h4><br></br>
@@ -34,79 +35,56 @@ export default function Settings() {
             <form>
               <h4>Your personal information</h4><br></br>
               <div className="form-group">
-                <div>
+                <div style={{display: "flex",justifyContent: "center"}}>
                 <label className="col-sm-3 col-xs-12 control-label">
-                  <strong>First name:</strong>
+                  <strong>Full name:</strong>
                 </label>                
                 <div class="col-sm-5 col-xs-12">
-                <input notranslate="" class="mp-sensitive form-control" type="text" id="first_name" name="first_name" value="" placeholder="(optional)"/>
+                <input notranslate="" class="mp-sensitive form-control" type="text" id="first_name" name="first_name" value={patientData.fullName} placeholder="(optional)"/>
                 </div>
                 </div>              
               </div>
 
               <div className="form-group">
-                <div>
-                <label className="col-sm-3 col-xs-12 control-label">
-                  <strong>Middle name:</strong>
-                </label>                
-                <div class="col-sm-5 col-xs-12">
-                <input notranslate="" class="mp-sensitive form-control" type="text" id="middle_name" name="middle_name" value="" placeholder="(optional)"/>
-                </div>
-                </div>              
-              </div>
-              
-              
-              <div className="form-group">
-                <div>
-                <label className="col-sm-3 col-xs-12 control-label">
-                  <strong>Last name:</strong>
-                </label>                
-                <div class="col-sm-5 col-xs-12">
-                <input notranslate="" class="mp-sensitive form-control" type="text" id="last_name" name="last_name" value="" placeholder="(optional)"/>
-                </div>
-                </div>              
-              </div>
-
-              <div className="form-group">
-                <div>
+                <div style={{display: "flex",justifyContent: "center"}}>
                 <label className="col-sm-3 col-xs-12 control-label">
                   <strong>Gender:</strong>
                 </label>                
                 <div class="col-sm-5 col-xs-12">
-                <input notranslate="" class="mp-sensitive form-control" type="text" id="gender" name="gender" value="" placeholder="(optional)"/>
+                <input notranslate="" class="mp-sensitive form-control" type="text" id="gender" name="gender" value={patientData.gender} placeholder="(optional)"/>
                 </div>
                 </div>              
               </div>
 
               <div className="form-group">
-                <div>
+                <div style={{display: "flex",justifyContent: "center"}}>
                 <label className="col-sm-3 col-xs-12 control-label">
                   <strong>phone number:</strong>
                 </label>                
                 <div class="col-sm-5 col-xs-12">
-                <input notranslate="" class="mp-sensitive form-control" type="text" id="phone_number" name="phone_number" value="" placeholder="(optional)"/>
+                <input notranslate="" class="mp-sensitive form-control" type="text" id="phone_number" name="phone_number" value={patientData.phone} placeholder="(optional)"/>
                 </div>
                 </div>              
               </div>
               
               <div className="form-group">
-                <div>
+                <div style={{display: "flex",justifyContent: "center"}}>
                 <label className="col-sm-3 col-xs-12 control-label">
                   <strong>Country:</strong>
                 </label>                
                 <div class="col-sm-5 col-xs-12">
-                <input notranslate="" class="mp-sensitive form-control" type="text" id="country" name="country" value="" placeholder="(optional)"/>
+                <input notranslate="" class="mp-sensitive form-control" type="text" id="country" name="country" value={patientData.country} placeholder="(optional)"/>
                 </div>
                 </div>              
               </div>
               
               <div className="form-group">
-                <div>
+                <div style={{display: "flex",justifyContent: "center"}}>
                 <label className="col-sm-3 col-xs-12 control-label">
                   <strong>State:</strong>
                 </label>                
                 <div class="col-sm-5 col-xs-12">
-                <input notranslate="" class="mp-sensitive form-control" type="text" id="state" name="state" value="" placeholder="(optional)"/>
+                <input notranslate="" class="mp-sensitive form-control" type="text" id="state" name="state" value={patientData.state} placeholder="(optional)"/>
                 </div>
                 </div>              
               </div>

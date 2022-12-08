@@ -74,4 +74,8 @@ body::before {
   .faq{
     margin-top: 4%;
   }
+
+  .dropdown-menu{
+    text-align: center;
+  }
   

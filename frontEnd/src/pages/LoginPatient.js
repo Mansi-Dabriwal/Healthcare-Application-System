@@ -20,13 +20,14 @@ function LoginPatient() {
     localStorage.setItem("PatientDetails", contactInfo.email)
     axios.post("http://localhost:4000/patient/login", contactInfo)
       .then(res => {
-        console.log(res.data)
-        if (res.data) {
+        console.log(res)
+        if (res.status === 200 || res.status === 204) {
           localStorage.setItem("EntirePatientDetails", JSON.stringify(res.data.patient))
+          console.log(res)
           window.location = "/patientP"
         }
         else {
-          alert("Error")
+          alert(res.data.message)
         }
       })
     // setContactInfo({email: "", password: ""})
@@ -68,9 +69,9 @@ function LoginPatient() {
                 Submit
               </button>
             </div>
-            <p className="forgot-password text-right mt-2">
+            {/* <p className="forgot-password text-right mt-2">
               Forgot <a href="#">password?</a>
-            </p>
+            </p> */}
           </div>
         </form>
       </div>

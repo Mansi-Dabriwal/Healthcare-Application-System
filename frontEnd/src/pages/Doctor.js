@@ -17,7 +17,7 @@ export default function Doctor() {
             "date": patient.date,
             "time": patient.time,
             "patientEmail": patient.patient.email,
-            "doctorEmail": "siddhant34@gmail.com",
+            "doctorEmail": doctorMainData.email,
             "medicationType": diagnose.medicationType,
             "medicine1": diagnose.medicine1,
             "medicine2": diagnose.medicine2,
@@ -83,7 +83,7 @@ export default function Doctor() {
                                 <td>{item.patient.age}</td>
                                 <td>{item.patient.gender}</td>
                                 <td>{item.patient.email}</td>
-                                <td><button onClick={() => getRowData(item)}>Select</button></td>
+                                <td><button onClick={() => getRowData(item)} className="btn btn-primary">Select</button></td>
                             </tr>
                         )
                     })}
@@ -105,7 +105,7 @@ export default function Doctor() {
                         <label style={{ margin: "5px" }}>
                             Medication Type
                         </label>
-                        <select class="form-select" name="medicationType" aria-label="Default select example" style={{ width: "200px" }} onChange={(e) => handleChange(e)} value={diagnose}>
+                        <select class="form-select" name="medicationType" aria-label="Default select example" style={{ width: "200px" }} onChange={(e) => handleChange(e)}>
                             <option value="otc" name="medicationType" >Over The Counter</option>
                             <option value="prescription" name="medicationType">Prescription</option>
                         </select>

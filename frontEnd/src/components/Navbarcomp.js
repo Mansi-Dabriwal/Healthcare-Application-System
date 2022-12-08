@@ -30,13 +30,13 @@ function Navbarcomp() {
               <a href="About" class="nav-link">About</a>
             </li>
             <li class="nav-item">
-              <a href="#questions" class="nav-link">FAQ</a>
+              <a href="/testimonials" class="nav-link">Testimonials</a>
             </li>
             <li class="nav-item">
-              <a href="#testimonials" class="nav-link">Testimonials</a>
+              <a href="/contact" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Contact</a>
+              <a href="/patient-form" class="nav-link">Get Started</a>
             </li>
             <li class="nav-item">
               <a class="btn btn-primary dropdown-toggle login" data-toggle="dropdown">Login</a>
@@ -46,9 +46,7 @@ function Navbarcomp() {
                
               </ul>
             </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">Get Started</a>
-            </li>
+            
           </ul>
         </div>
       </div>

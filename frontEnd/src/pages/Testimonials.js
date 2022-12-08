@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "../styles/About.css";
 import Navbar from "../components/Navbarcomp";
-import review from "../Images/review.svg";
+import review from "../Images/review.jpeg";
 import Footer from "../components/Footercomp";
 import "../styles/Home.css";
 

@@ -72,9 +72,9 @@ function Logindoc() {
             Submit
           </button>
         </div>
-        <p className="forgot-password text-right mt-2">
+        {/* <p className="forgot-password text-right mt-2">
           Forgot <a href="#">password?</a>
-        </p>
+        </p> */}
       </div>
     </form>
   </div>

@@ -71,6 +71,7 @@ export class FormStepTwo extends Component {
           label="What are your exp from therapist?"
           value={values.therapistPreference}
           onChange={handleChange("therapistPreference")}
+          style={{textAlign: "left"}}
         >
           <MenuItem key="1" value="Male Therapist">Male Therapist</MenuItem>
           <MenuItem key="2" value="Female Therapist">Female Therapist</MenuItem>
@@ -80,7 +81,7 @@ export class FormStepTwo extends Component {
         <br />
         <TextField
         fullWidth
-          label="How would you rate your current physical health? (From 1 to 5 with 1 being poor and 5 being great)"
+          label="How would you rate your current physical health? (On a scale of 1-5)"
           hintText="How would you rate your current physical health?"
           onChange={handleChange("rateHealth")}
           defaultValue={values.rateHealth}

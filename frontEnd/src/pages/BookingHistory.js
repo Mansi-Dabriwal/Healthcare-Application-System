@@ -13,7 +13,7 @@ const BookingHistory = () => {
     
 
     const dataFunction = (newData) => {
-        newData.bookingDetails.map((item,index) => {
+        newData?.bookingDetails.map((item,index) => {
             console.log(item.dateAndTime)
             let newDate = new Date(item.dateAndTime);
             console.log(newDate);
@@ -29,8 +29,8 @@ const BookingHistory = () => {
     <>
     <PatientNavBar/>
     <div style={{marginTop: "50px"}}>
-    <div>BookingHistory</div>
- {newBookingData.fullName === entirePatientData.fullName ? 
+    <h4 className='m-5'>Booking History</h4>
+ {newBookingData?.fullName === entirePatientData?.fullName ? 
 <div className='col-md-8' style={{ marginRight: "auto", marginLeft: "auto" }}>
          <table class="table">
            <thead>
@@ -52,7 +52,9 @@ const BookingHistory = () => {
              })}
            </tbody>
          </table>
-       </div> : ''}
+       </div> : <>
+             <h4>You don't have any recent bookings</h4>
+       </>}
        </div>
      
        </>

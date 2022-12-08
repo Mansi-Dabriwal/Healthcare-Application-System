@@ -1,6 +1,11 @@
 .MuiInputBase-fullWidth {
     width: 500px !important;
     margin-bottom: 15px;
+    text-align: center;
+}
+
+.MuiSelect-select.MuiSelect-select {
+    /* padding-right: 450px !important; */
 }
 
 .outlines-size-small{

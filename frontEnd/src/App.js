@@ -16,6 +16,9 @@ import Doctor from './pages/Doctor';
 import Payment from './pages/Payment';
 import BookingHistory from './pages/BookingHistory';
 import PatientDiagnose from './pages/PatientDiagnose';
+import Diagnosis from './pages/Diagnosis';
+import Testimonials from './pages/Testimonials';
+import Contact from './pages/Contact';
 function App() {
   return (
     <div className="App">
@@ -31,11 +34,14 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/patientP" element={<PatientP />} />
           <Route path="/patient-form" element={<PatientForm />} />
-          <Route path="/patientSignUp" element={<PatientSignUp/>} />
+          <Route path="/patientSignUp" element={<PatientSignUp />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/bookingHistory" element={<BookingHistory />} />
-          <Route path="/doctor" element={<Doctor/>}/>
+          <Route path="/doctor" element={<Doctor />} />
           <Route path="/diagnosePatient" element={<PatientDiagnose />} />
+          <Route path="/patientDiagnosis" element={<Diagnosis />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
     </div>

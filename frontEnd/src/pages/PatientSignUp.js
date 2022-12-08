@@ -28,8 +28,8 @@ export class PatientSignUp extends Component {
   onSubmit = () => {
     axios.post("http://localhost:4000/patient/create", this.props.values)
       .then(res => {
-        console.log(res.data.message)
-        if (res.data.message === "Patient created successfully!") {
+        console.log(res)
+        if (res.status ===  201) {
           window.location = "/LoginPatient"
         }
         else {
@@ -58,9 +58,9 @@ export class PatientSignUp extends Component {
               placeholder="Enter username"
             /> */}
                 <TextField
-                  label="Size"
+                  label="Full Name"
                   id="outlined-size-small"
-                  defaultValue="Small"
+                  defaultValue="Enter Full Name"
                   size="small"
                   onChange={handleChange("fullName")}
                   value={values.fullName}
@@ -69,9 +69,9 @@ export class PatientSignUp extends Component {
 
               <div className="form-group mt-3">
               <TextField
-                  label="Size"
+                  label="Email"
                   id="outlined-size-small"
-                  defaultValue="Small"
+                  defaultValue="Enter Email"
                   size="small"
                   onChange={handleChange("email")}
                   value={values.email}
@@ -79,10 +79,11 @@ export class PatientSignUp extends Component {
               </div>
               <div className="form-group mt-3">
               <TextField
-                  label="Size"
+                  label="Password"
                   id="outlined-size-small"
-                  defaultValue="Small"
+                  defaultValue="Enter Password"
                   size="small"
+                  type="password"
                   onChange={handleChange("password")}
                   value={values.password}
                 />
