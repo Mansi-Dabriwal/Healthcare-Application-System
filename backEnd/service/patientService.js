@@ -64,7 +64,12 @@ export const feedback = async (req, res) => {
 
 export const bookAppointment = async (req, res) => {
     let payload = req.body;
-    let appointment = { patientEmail: payload.patientEmail, doctorEmail: payload.doctorEmail, dateAndTime: payload.dateAndTime };
+    let newDate = new Date(payload.dateAndTime);
+    let date = newDate.toLocaleDateString();
+    let time = newDate.toLocaleTimeString();
+
+    let appointment = { patientEmail: payload.patientEmail, doctorEmail: payload.doctorEmail, date: date, time: time };
+    console.log(appointment);
     Patient.findOneAndUpdate({ email: payload.patientEmail }, { $push: { "bookingDetails": appointment } });
     let patient = await Patient.findOne({ email: payload.patientEmail });
     let booking = patient.bookingDetails;
@@ -74,7 +79,7 @@ export const bookAppointment = async (req, res) => {
     let patientResponse = await Patient.findOne({ email: payload.patientEmail });
     let doctor = await Doctor.findOne({ email: payload.doctorEmail });
     let patientAppointment = doctor.appointmentPatient;
-    let doctorResponse = { dateAndTime: payload.dateAndTime, patient: patientResponse };
+    let doctorResponse = { date: date, time: time, patient: patientResponse };
     patientAppointment.push(doctorResponse);
     await Doctor.findOneAndUpdate({ email: payload.doctorEmail }, { appointmentPatient: patientAppointment });
     return res.status(200).send({ message: "Appointment booked!", patient: patientResponse });
