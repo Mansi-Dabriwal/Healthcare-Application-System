@@ -67,25 +67,22 @@ export const bookAppointment = async (req, res) => {
     let newDate = new Date(payload.dateAndTime);
     let date = newDate.toLocaleDateString();
     let time = newDate.toLocaleTimeString();
-
-    let appointment = { patientEmail: payload.patientEmail, doctorEmail: payload.doctorEmail, date: date, time: time };
-    console.log(appointment);
-    Patient.findOneAndUpdate({ email: payload.patientEmail }, { $push: { "bookingDetails": appointment } });
+    let appointment = { patientEmail: payload.patientEmail, doctorEmail: payload.doctorEmail, date: date, time: time, dateAndTime: payload.dateAndTime };
     let patient = await Patient.findOne({ email: payload.patientEmail });
     let booking = patient.bookingDetails;
     booking.push(appointment);
-    console.log(booking)
+    booking.sort((a, b) => (new Date(a.date) > new Date(b.date)) ? 1 : -1)
     await Patient.findOneAndUpdate({ email: payload.patientEmail }, { bookingDetails: booking });
     let patientResponse = await Patient.findOne({ email: payload.patientEmail });
     let doctor = await Doctor.findOne({ email: payload.doctorEmail });
     let patientAppointment = doctor.appointmentPatient;
-    let doctorResponse = { date: date, time: time, patient: patientResponse };
+    let doctorResponse = { date: date, time: time, patient: patientResponse, dateAndTime: payload.dateAndTime };
     patientAppointment.push(doctorResponse);
+    patientAppointment.sort((a, b) => (new Date(a.date) > new Date(b.date)) ? 1 : -1)
+
     await Doctor.findOneAndUpdate({ email: payload.doctorEmail }, { appointmentPatient: patientAppointment });
     return res.status(200).send({ message: "Appointment booked!", patient: patientResponse });
 }
-
-
 
 
 export const save = async (req, res) => {

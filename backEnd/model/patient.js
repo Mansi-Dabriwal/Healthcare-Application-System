@@ -122,7 +122,11 @@ const patientSchema = new mongoose.Schema({
     bookingDetails: {
         type: Array,
         required: false
-    }  
+    },
+    lastDiagnose: {
+        type: Object,
+        required: false
+    }
 
 
 });
