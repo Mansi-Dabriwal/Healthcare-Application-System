@@ -154,8 +154,8 @@ export const diagnosePatient = async (req, res) => {
     let doctor = await Doctor.findOne({ email: payLoad.doctorEmail });
     let doctorName = doctor.fullName;
     let patientAppointment = doctor.appointmentPatient;
-    patientAppointment.shift();
-    await Doctor.findOneAndUpdate({ email: payLoad.doctorEmail }, { appointmentPatient: patientAppointment });
+    let apt = patientAppointment.filter(apt => apt.dateAndTime != payLoad.dateAndTime);
+    await Doctor.findOneAndUpdate({ email: payLoad.doctorEmail }, { appointmentPatient: apt });
     let patientResponse = await Patient.findOne({ email: payLoad.patientEmail });
     let bookings = patientResponse.bookingDetails.filter(booking => booking.dateAndTime != payLoad.dateAndTime);
     let diagnose = { medicationType: payLoad.medicationType, medicine1: payLoad.medicine1, medicine2: payLoad.medicine2, remarks: payLoad.remarks, doctorName: doctorName, date: payLoad.date };
