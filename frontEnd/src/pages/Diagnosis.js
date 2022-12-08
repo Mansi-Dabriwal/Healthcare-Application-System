@@ -9,7 +9,7 @@ const Diagnosis = () => {
     <PatientNavBar></PatientNavBar><br></br>
         {/* patient diagnosis data  */}
         <h4 className='m-5 '>Your Recent Diagnosis</h4>
-        {patientDiagnosisData.lastDiagnose ? 
+        {patientDiagnosisData?.lastDiagnose ? 
         <div className='col-md-8' style={{ marginRight: "auto", marginLeft: "auto" }}>
         <table class="table">
           <thead>
@@ -31,7 +31,8 @@ const Diagnosis = () => {
                 </tr>
           </tbody>
         </table>
-      </div>:''}</>
+      </div>:
+      <><h4>Your don't have any recent diagnosis</h4></>}</>
   )
 }
 
