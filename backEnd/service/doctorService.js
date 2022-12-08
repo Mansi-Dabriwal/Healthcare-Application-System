@@ -1,4 +1,5 @@
 import { Doctor } from "../model/doctor.js";
+import { Patient } from "../model/patient.js";
 import bcrypt from 'bcrypt'
 import sendEmail from './../utils/sendEmail.js';
 
@@ -145,4 +146,19 @@ export const doctorByPreference = async (req, res) => {
         }
 
     })
+}
+
+
+export const diagnosePatient = async (req, res) => {
+    let payLoad = req.body;
+    let doctor = await Doctor.findOne({ email: payLoad.doctorEmail });
+    let doctorName = doctor.fullName;
+    let patientAppointment = doctor.appointmentPatient;
+    patientAppointment.shift();
+    await Doctor.findOneAndUpdate({ email: payLoad.doctorEmail }, { appointmentPatient: patientAppointment });
+    let patientResponse = await Patient.findOne({ email: payLoad.patientEmail });
+    let bookings = patientResponse.bookingDetails.filter(booking => booking.dateAndTime != payLoad.dateAndTime);
+    let diagnose = { medicationType: payLoad.medicationType, medicine1: payLoad.medicine1, medicine2: payLoad.medicine2, remarks: payLoad.remarks, doctorName: doctorName, date: payLoad.date };
+    await Patient.findOneAndUpdate({ email: payLoad.patientEmail }, { lastDiagnose: diagnose, bookingDetails: bookings });
+    return res.status(200).send({ message: "Patient diagnosed successfully!" });
 }
