@@ -68,6 +68,11 @@ body::before {
     text-align: left;
     margin-top: 4%;
   }
+  .emergency{
+    text-align: left;
+    margin-top: 4%;
+    font-size: 30px;
+  }
   .head{
     text-align: left;
   }

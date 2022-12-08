@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import "../styles/About.css";
 import Navbar from "../components/Navbarcomp";
 import review from "../Images/review.svg";
@@ -8,8 +9,32 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
+import "../styles/Home.css";
 
 function Testimonials() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_5m800ld",
+        "template_5mq9dke",
+        form.current,
+        "Rd22SA76XTWhPAMZE"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("Message sent");
+          window.location.reload();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <div>
       <Navbar></Navbar>
@@ -462,13 +487,50 @@ function Testimonials() {
       <section id="testimonials" class="p-5">
         <div class="container">
           <div class="row align-items-center justify-content-between">
-            <div class="col-md">
-              <img src={help} class="img-fluid" alt="" />
-            </div>
+            <form class="contact-form" ref={form} onSubmit={sendEmail}>
+              <h5 class="title">Feedback Form</h5>
+              <p class="description">
+                Feel free to give us your feedback. It will be recorded and
+                might be posted as well.
+              </p>
+              <div>
+                <input
+                  type="text"
+                  class="form-control rounded border-white mb-3 form-input"
+                  id="name"
+                  name="feed_name"
+                  placeholder="Full Name"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  class="form-control rounded border-white mb-3 form-input"
+                  name="feed_email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div>
+                <textarea
+                  id="message"
+                  class="form-control rounded border-white mb-3 form-text-area"
+                  rows="5"
+                  cols="30"
+                  name="message"
+                  placeholder="Feedback"
+                  required
+                ></textarea>
+              </div>
+              <div class="submit-button-wrapper">
+                <input type="submit" value="Send" />
+              </div>
+            </form>
 
             <div class="col-md p-5">
               {/* <h2 class="head">Our Testimonials</h2> */}
-              <p class="lead">
+              <p class="emergency">
                 If you are in a crisis or any other person may be in danger -
                 don't use this site. Call{" "}
                 <span>
