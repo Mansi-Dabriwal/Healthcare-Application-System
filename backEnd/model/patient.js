@@ -122,7 +122,7 @@ const patientSchema = new mongoose.Schema({
     bookingDetails: {
         type: Array,
         required: false
-    }
+    }  
 
 
 });
