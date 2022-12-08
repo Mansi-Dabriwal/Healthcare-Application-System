@@ -1,16 +1,10 @@
 import React from 'react';
 import Navbar from '../components/Navbarcomp';
 import Footer from '../components/Footercomp';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Image from "react-bootstrap/Image";
 import doctor1 from '../Images/doctor1.svg';
 import doctor2 from '../Images/doctor2.svg';
-import img1 from '../Images/img1.jpg'
-import img2 from '../Images/img1.jpg'
-import img3 from '../Images/img1.jpg'
 import '../styles/Home.css';
+import { Link } from 'react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 
 
@@ -31,13 +25,13 @@ function Home() {
               </h2>
               
               <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#enroll">
-                Individual
+                <Link to="/patient-form">Individual</Link>
               </button>
               <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#enroll">
-                Couple
+              <Link to="/patient-form">Couple</Link>
               </button>
               <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#enroll">
-                Teen
+              <Link to="/patient-form">Teen</Link>
               </button>
               
             </div>

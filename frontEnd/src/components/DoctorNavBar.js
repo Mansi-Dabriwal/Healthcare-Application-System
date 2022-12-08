@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 // import { CiSettings } from 'react-icons/fa';
 
-function PatientNavBar() {
+function DoctorNavBar() {
   return ( 
     <nav id="navbar-example2" class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
     <div class="container">
@@ -17,16 +17,13 @@ function PatientNavBar() {
       <div class="collapse navbar-collapse" id="navmenu">
         <ul class="navbar-nav ms-auto nav-pills">
           <li class="nav-item">
-            <a href="/patient" class="nav-link">Home</a>
+            <a href="#scrollspyHeading1" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <a href="/patientP" class="nav-link">Book Appointment</a>
+            <a href="/doctor" class="nav-link">Upcoming Appointments</a>
           </li>
           <li class="nav-item">
-            <a href="/bookingHistory" class="nav-link">Booking History</a>
-          </li>
-          <li class="nav-item">
-            <a href="/settings" class="nav-link">Setting</a>
+            <a href="/diagnosePatient" class="nav-link">Diagnose Patient</a>
           </li>
         </ul>
       </div>
@@ -35,4 +32,4 @@ function PatientNavBar() {
   );
 }
 
-export default PatientNavBar;
+export default DoctorNavBar;

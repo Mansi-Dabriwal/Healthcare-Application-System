@@ -1,14 +1,44 @@
 import React from 'react'
 import '../styles/Logindoc.css';
 import Navbar from '../components/Navbarcomp';
-
+import axios from "axios";
 import Footer from '../components/Footercomp';
-
+import { useNavigate } from "react-router-dom";
 function Logindoc() {
-    const loginDoctor=()=>{
-     let email = document.getElementById("docEmail");
-     let password= document.getElementById("docPassword");
-    //  {"email":email,"password":password};
+    let navigate = useNavigate();
+    const loginDoctor=(event)=>{
+        event.preventDefault();
+        console.log("in login!")
+
+     let email = document.getElementById("docEmail").value;
+     let password= document.getElementById("docPassword").value;
+     const postpackage ={
+            email: email,
+            password: password
+     };
+     axios.post('http://localhost:4000/doctor/login',postpackage ,
+      {
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        }})
+      .then(function (response) {
+        if(response.data)
+        {
+          console.log("response.data: ",response.data.doctor)
+          localStorage.setItem("doctorData", JSON.stringify(response.data.doctor))
+            navigate("/doctor");
+        }
+        else
+        {
+            if(response.code===404)
+            {
+              alert("No Doctor with credential found!")
+            }
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     }
 
 

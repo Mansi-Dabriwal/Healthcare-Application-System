@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Payment() {
     const [loading, setLoading] = useState(false);
-    const [orderAmount, setOrderAmount] = useState(0);
+    const [orderAmount, setOrderAmount] = useState("300");
     const [orders, setOrders] = useState([]);
     const [message, setMessage] = useState(false);
 
@@ -26,7 +26,7 @@ export default function Payment() {
         try{
           setLoading(true);
           const result = await axios.post('http://localhost:4000/razorpay/create-order',{
-            amount:orderAmount+"00",
+            amount:orderAmount + "00",
           });
 
           const { amount, id:order_id, currency} = result.data;
@@ -82,19 +82,19 @@ export default function Payment() {
     <div>
         <h1>Payment Portal</h1><br></br>
         <div>
-        <label>
-        Amount: {' '}
-            <input 
+        <label style={{fontSize: "22px"}}>
+        Amount: <strong>$300</strong>
+            {/* <input 
             placeholder='INR'
             type="number"
             value={orderAmount}
             onChange={(e) => setOrderAmount(e.target.value)}
-            ></input>
+            ></input> */}
             
         </label>  <br></br><br></br>
         <button disabled={loading} onClick={loadRazorpay} className="btn btn-default">
                 Razorpay
-            </button> <button className="btn btn-default"><Link to="/home" style={{ textDecoration: 'none',color: '#FFF' }}>Back</Link></button>
+            </button> <button className="btn btn-default"><Link to="/patient" style={{ textDecoration: 'none',color: '#FFF' }}>Back</Link></button>
             {loading && <div>Loading....</div>}
         </div>
         <div className='list-orders'>
