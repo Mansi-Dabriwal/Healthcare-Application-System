@@ -4,7 +4,8 @@ import {
   Button,
   TextField,
   Toolbar,
-  Typography
+  Typography,
+  MenuItem
 } from "@material-ui/core";
 import './FormStyles.css';
 
@@ -31,27 +32,61 @@ export class FormStepFive extends Component {
         <div style={{padding: "50px",borderRadius: "25px", width: "600px"}}>
         <TextField
         fullWidth
+          id="outlined-select-currency"
+          select
+          label="Are you taking any medication?"
+          value={values.medicationHistory}
+          onChange={handleChange("medicationHistory")}
+        >
+          <MenuItem key="1" value="Yes">Yes</MenuItem>
+          <MenuItem key="2" value="No">No</MenuItem>
+        </TextField>
+        {/* <TextField
+        fullWidth
           label="Are you taking any medication?"
           hintText="Are you taking any medication?"
           onChange={handleChange("medicationHistory")}
           defaultValue={values.medicationHistory}
-        />
+        /> */}
         <br />
         <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="Are you currently experiencing any chronic pain?"
+          value={values.chronicPain}
+          onChange={handleChange("chronicPain")}
+        >
+          <MenuItem key="1" value="Yes">Yes</MenuItem>
+          <MenuItem key="2" value="No">No</MenuItem>
+        </TextField>
+        {/* <TextField
         fullWidth
           label="Are you currently experiencing any chronic pain?"
           hintText="Are you currently experiencing any chronic pain?"
           onChange={handleChange("chronicPain")}
           defaultValue={values.chronicPain}
-        />
+        /> */}
         <br />
         <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="How would you rate your current financial status?"
+          value={values.financialStatus}
+          onChange={handleChange("financialStatus")}
+        >
+          <MenuItem key="1" value="Good">Good</MenuItem>
+          <MenuItem key="2" value="Fair">Fair</MenuItem>
+          <MenuItem key="3" value="Poor">Poor</MenuItem>
+        </TextField>
+        {/* <TextField
         fullWidth
           label="How would you rate your current financial status?"
           hintText="How would you rate your current financial status?"
           onChange={handleChange("financialStatus")}
           defaultValue={values.financialStatus}
-        />
+        /> */}
         <br />
         <br />
         <div style={{float: "right"}}>

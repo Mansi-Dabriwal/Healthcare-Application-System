@@ -4,7 +4,8 @@ import {
   Button,
   TextField,
   Toolbar,
-  Typography
+  Typography,
+  MenuItem
 } from "@material-ui/core";
 import './FormStyles.css';
 
@@ -31,43 +32,83 @@ export class FormStepThree extends Component {
         <div style={{padding: "50px",borderRadius: "25px", width: "600px"}}>
         <TextField
         fullWidth
+          id="outlined-select-currency"
+          select
+          label="How would you rate your current eating habits?"
+          value={values.eatingHabits}
+          onChange={handleChange("eatingHabits")}
+        >
+          <MenuItem key="1" value="Good">Good</MenuItem>
+          <MenuItem key="2" value="Fair">Fair</MenuItem>
+          <MenuItem key="3" value="Poor">Poor</MenuItem>
+        </TextField>
+        {/* <TextField
+        fullWidth
           label="How would you rate your current eating habits?"
           hintText="How would you rate your current eating habits?"
           onChange={handleChange("eatingHabits")}
           defaultValue={values.eatingHabits}
-        />
+        /> */}
         <br />
-        {/* <TextField
-        fullWidth
-          label="Are you experience overwhelming grief, sadness or depression?"
-          hintText="Are you currently experience overwhelming grief, sadness or depression?"
-          onChange={handleChange("reasonForTherapy")}
-          defaultValue={values.reasonForTherapy}
-        />
-        <br /> */}
         <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="Are you experiencing touble falling asleep, or sleeping too much?"
+          value={values.sleepProblems}
+          onChange={handleChange("sleepProblems")}
+        >
+          <MenuItem key="1" value="Yes">Yes</MenuItem>
+          <MenuItem key="2" value="No">No</MenuItem>
+          <MenuItem key="3" value="Sometimes">Sometimes</MenuItem>
+        </TextField>
+        {/* <TextField
         fullWidth
           label="Are you experiencing touble falling asleep, or sleeping too much?"
           hintText="How often have you been bothered by touble falling asleep, staying asleep, or sleeping too much?"
           onChange={handleChange("sleepProblems")}
           defaultValue={values.sleepProblems}
-        />
+        /> */}
         <br />
         <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="Are you experiencing Feeling tired or having little energy?"
+          value={values.currentlyTired}
+          onChange={handleChange("currentlyTired")}
+        >
+          <MenuItem key="1" value="Yes">Yes</MenuItem>
+          <MenuItem key="2" value="No">No</MenuItem>
+          <MenuItem key="3" value="Sometimes">Sometimes</MenuItem>
+        </TextField>
+        {/* <TextField
         fullWidth
           label="Are you experiencing Feeling tired or having little energy?"
           hintText="How often have you been bothered by Feeling tired or having little energy?"
           onChange={handleChange("currentlyTired")}
           defaultValue={values.currentlyTired}
-        />
+        /> */}
         <br/>
         <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="Are you experiencing Feeling depressed?"
+          value={values.currentlyDepressed}
+          onChange={handleChange("currentlyDepressed")}
+        >
+          <MenuItem key="1" value="Yes">Yes</MenuItem>
+          <MenuItem key="2" value="No">No</MenuItem>
+          <MenuItem key="3" value="Sometimes">Sometimes</MenuItem>
+        </TextField>
+        {/* <TextField
         fullWidth
         label="Are you experiencing Feeling depressed?"
         hintText="Are you experiencing Feeling depressed"
         onChange={handleChange("currentlyDepressed")}
         defaultValue={values.currentlyDepressed}
-        />
+        /> */}
         <br />
         <br />
         <div style={{float: "right"}}>

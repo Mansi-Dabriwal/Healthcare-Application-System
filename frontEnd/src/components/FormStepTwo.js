@@ -4,7 +4,8 @@ import {
   Button,
   TextField,
   Toolbar,
-  Typography
+  Typography,
+  MenuItem
 } from "@material-ui/core";
 import './FormStyles.css';
 
@@ -29,13 +30,24 @@ export class FormStepTwo extends Component {
     return (
       <Fragment>
         <div style={{padding: "50px",borderRadius: "25px", width: "600px"}}>
-        <TextField
+        {/* <TextField
           fullWidth
           label="Have you ever been in therapy before?"
           hintText="Have you ever been in therapy before?"
           onChange={handleChange("beenInTherapy")}
           defaultValue={values.beenInTherapy}
-        />
+        /> */}
+        <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="Have you ever been in therapy before?"
+          value={values.beenInTherapy}
+          onChange={handleChange("beenInTherapy")}
+        >
+          <MenuItem key="1" value="Yes">Yes</MenuItem>
+          <MenuItem key="2" value="No">No</MenuItem>
+        </TextField>
         <br />
         <TextField
         fullWidth
@@ -45,17 +57,30 @@ export class FormStepTwo extends Component {
           defaultValue={values.reasonForTherapy}
         />
         <br />
-        <TextField
+        {/* <TextField
         fullWidth
           label="What are your expectations from therapist?"
           hintText="What are your exp from therapist?"
           onChange={handleChange("therapistPreference")}
           defaultValue={values.therapistPreference}
-        />
+        /> */}
+        <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="What are your exp from therapist?"
+          value={values.therapistPreference}
+          onChange={handleChange("therapistPreference")}
+        >
+          <MenuItem key="1" value="Male Therapist">Male Therapist</MenuItem>
+          <MenuItem key="2" value="Female Therapist">Female Therapist</MenuItem>
+          <MenuItem key="3" value="Religious Therapist">Religious Therapist</MenuItem>
+          <MenuItem key="4" value="Therapist from LGBTQ+ Community">Therapist from LGBTQ+ Community</MenuItem>
+        </TextField>
         <br />
         <TextField
         fullWidth
-          label="How would you rate your current physical health?"
+          label="How would you rate your current physical health? (From 1 to 5 with 1 being poor and 5 being great)"
           hintText="How would you rate your current physical health?"
           onChange={handleChange("rateHealth")}
           defaultValue={values.rateHealth}

@@ -4,7 +4,8 @@ import {
   Button,
   TextField,
   Toolbar,
-  Typography
+  Typography,
+  MenuItem
 } from "@material-ui/core";
 import './FormStyles.css';
 
@@ -31,35 +32,81 @@ export class FormStepFour extends Component {
         <div style={{padding: "50px",borderRadius: "25px", width: "600px"}}>
         <TextField
         fullWidth
+          id="outlined-select-currency"
+          select
+          label="How often have you been bothered by Poor appetite or overeating?"
+          value={values.poorAppetiteOrOvereating}
+          onChange={handleChange("poorAppetiteOrOvereating")}
+        >
+          <MenuItem key="1" value="Very Often">Very Often</MenuItem>
+          <MenuItem key="2" value="Sometimes">Sometimes</MenuItem>
+          <MenuItem key="3" value="Never">Never</MenuItem>
+        </TextField>
+        {/* <TextField
+        fullWidth
           label="How often have you been bothered by Poor appetite or overeating?"
           hintText="How often have you been bothered by Poor appetite or overeating?"
           onChange={handleChange("poorAppetiteOrOvereating")}
           defaultValue={values.poorAppetiteOrOvereating}
-        />
+        /> */}
         <br />
         <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="Are you currently employed?"
+          value={values.currentlyEmployed}
+          onChange={handleChange("currentlyEmployed")}
+        >
+          <MenuItem key="1" value="Yes">Yes</MenuItem>
+          <MenuItem key="2" value="No">No</MenuItem>
+        </TextField>
+        {/* <TextField
         fullWidth
           label="Are you currently employed?"
           hintText="Are you currently employed?"
           onChange={handleChange("currentlyEmployed")}
           defaultValue={values.currentlyEmployed}
-        />
+        /> */}
         <br />
         <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="Do you have any problems with intimacy?"
+          value={values.intimacyProblems}
+          onChange={handleChange("intimacyProblems")}
+        >
+          <MenuItem key="1" value="Yes">Yes</MenuItem>
+          <MenuItem key="2" value="No">No</MenuItem>
+        </TextField>
+        {/* <TextField
         fullWidth
           label="Do you have any problems with intimacy?"
           hintText="Do you have any problems with intimacy?"
           onChange={handleChange("intimacyProblems")}
           defaultValue={values.intimacyProblems}
-        />
+        /> */}
         <br />
         <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="How often do you drink alcohol?"
+          value={values.alcoholFrequency}
+          onChange={handleChange("alcoholFrequency")}
+        >
+          <MenuItem key="1" value="Daily">Daily</MenuItem>
+          <MenuItem key="2" value="Never">Never</MenuItem>
+          <MenuItem key="3" value="Infrequently">Infrequently</MenuItem>
+        </TextField>
+        {/* <TextField
         fullWidth
           label="How often do you drink alcohol?"
           hintText="How often do you drink alcohol?"
           onChange={handleChange("alcoholFrequency")}
           defaultValue={values.alcoholFrequency}
-        />
+        /> */}
         <br />
         <br />
         <div style={{float: "right"}}>

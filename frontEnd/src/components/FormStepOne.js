@@ -4,6 +4,7 @@ import {
   Button,
   TextField,
   Toolbar,
+  MenuItem,
   Typography
 } from "@material-ui/core";
 import './FormStyles.css';
@@ -25,14 +26,25 @@ export class FormStepOne extends Component {
     return (
       <Fragment>
         <div style={{padding: "50px",borderRadius: "25px", width: "600px"}}>
-        <TextField
+        {/* <TextField
           fullWidth
           label="What is your gender identity?"
           hintText="What is your gender identity?"
           onChange={handleChange("gender")}
           defaultValue={values.gender}
-        />
-        <br />
+        /> */}
+        <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="What is your gender identity?"
+          value={values.gender}
+          onChange={handleChange("gender")}
+        >
+          <MenuItem key="1" value="male">Male</MenuItem>
+          <MenuItem key="2" value="female">Female</MenuItem>
+          <MenuItem key="3" value="Prefer Not to say">Prefer Not to say</MenuItem>
+        </TextField>
         <TextField
           fullWidth
           label="How old are you?"
@@ -42,20 +54,46 @@ export class FormStepOne extends Component {
         />
         <br />
         <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="How do you identify?"
+          value={values.sexualOrientation}
+          onChange={handleChange("sexualOrientation")}
+        >
+          <MenuItem key="1" value="Straight">Straight</MenuItem>
+          <MenuItem key="2" value="Gay">Gay</MenuItem>
+          <MenuItem key="3" value="Bi">Bi</MenuItem>
+          <MenuItem key="4" value="Prefer Not to say">Prefer Not to say</MenuItem>
+        </TextField>
+        {/* <TextField
           fullWidth
           label="How do you identify?"
           hintText="How do you identify?"
           onChange={handleChange("sexualOrientation")}
           defaultValue={values.sexualOrientation}
-        />
+        /> */}
         <br />
         <TextField
+        fullWidth
+          id="outlined-select-currency"
+          select
+          label="What is your relationship status?"
+          value={values.relationStatus}
+          onChange={handleChange("relationStatus")}
+        >
+          <MenuItem key="1" value="Single">Single</MenuItem>
+          <MenuItem key="2" value="Married">Married</MenuItem>
+          <MenuItem key="3" value="Divorced">Divorced</MenuItem>
+          <MenuItem key="4" value="Relationship">Relationship</MenuItem>
+        </TextField>
+        {/* <TextField
           fullWidth
           label="What is you relationship status?"
           hintText="What is you relationship status?"
           onChange={handleChange("relationStatus")}
           defaultValue={values.relationStatus}
-        />
+        /> */}
         <br />
         <TextField
           fullWidth
