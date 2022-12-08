@@ -8,8 +8,10 @@ export default function Patient() {
   const [value, onChange] = useState(new Date());
   const [doctorData, setDoctorData] = useState([])
   const [bookingDetails, setBookingDetails] = useState();
+  let newEntirePatientData = JSON.parse(localStorage.getItem("EntirePatientDetails"))
+  console.log(newEntirePatientData)
 
-  let pref = { "preference": "Female Therapist" }
+  let pref = { "preference": newEntirePatientData?.therapistPreference }
 
   const preferDoctorData = () => {
     axios.post("http://localhost:4000/doctor/doctorByPreference", pref)

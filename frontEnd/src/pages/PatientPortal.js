@@ -12,6 +12,7 @@ function PatientPortal() {
         <PatientNavBar></PatientNavBar><br></br>
 
         {/* patient diagnosis data  */}
+        {patientDiagnosisData.lastDiagnose ? 
         <div className='col-md-8' style={{ marginRight: "auto", marginLeft: "auto" }}>
         <table class="table">
           <thead>
@@ -25,15 +26,15 @@ function PatientPortal() {
           </thead>
           <tbody>
                 <tr>
-                <td>{patientDiagnosisData.lastDiagnose.doctorName}</td>
-                  <td>{patientDiagnosisData.lastDiagnose.medicationType}</td>
-                  <td>{patientDiagnosisData.lastDiagnose.medicine1}</td>
-                  <td>{patientDiagnosisData.lastDiagnose.medicine2}</td>
-                  <td>{patientDiagnosisData.lastDiagnose.remarks}</td>
+                <td>{patientDiagnosisData.lastDiagnose?.doctorName}</td>
+                  <td>{patientDiagnosisData.lastDiagnose?.medicationType}</td>
+                  <td>{patientDiagnosisData.lastDiagnose?.medicine1}</td>
+                  <td>{patientDiagnosisData.lastDiagnose?.medicine2}</td>
+                  <td>{patientDiagnosisData.lastDiagnose?.remarks}</td>
                 </tr>
           </tbody>
         </table>
-      </div>
+      </div>:''}
         <div><br></br>
           <h3 style={{"textAlign":"center"}}>Welcome to DOC101!</h3><br></br>
           <h4>What is the therapy process?</h4>

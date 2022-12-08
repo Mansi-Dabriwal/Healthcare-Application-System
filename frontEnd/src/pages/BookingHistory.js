@@ -3,6 +3,9 @@ import PatientNavBar from '../components/PatientNavBar';
 
 const BookingHistory = () => {
     let bookingData = localStorage.getItem("bookingAppointment")
+    let entirePatientData = JSON.parse(localStorage.getItem("EntirePatientDetails"))
+    let newBookingData = JSON.parse(bookingData)
+    console.log(entirePatientData)
     let newData = JSON.parse(bookingData)
     useEffect(() => {
       dataFunction(newData)
@@ -26,30 +29,30 @@ const BookingHistory = () => {
     <>
     <PatientNavBar/>
     <div style={{marginTop: "50px"}}>
-    <div >BookingHistory</div>
-
+    <div>BookingHistory</div>
+ {newBookingData.fullName === entirePatientData.fullName ? 
 <div className='col-md-8' style={{ marginRight: "auto", marginLeft: "auto" }}>
          <table class="table">
            <thead>
              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
                <th scope="col">Doctor Name</th>
-               <th scope="col">Date & Time</th>
-               {/* <th scope="col">Time</th> */}
              </tr>
            </thead>
            <tbody>
              {newData.bookingDetails && newData.bookingDetails.map((data) => {
                return (
                 <tr>
+                    <td>{data.date}</td>
+                    <td>{data.time}</td>
                     <td>{data.doctorEmail}</td>
-                    <td>{data.dateAndTime}</td>
-                    {/* <td>{data.time}</td> */}
                   </tr>
                )
              })}
            </tbody>
          </table>
-       </div>
+       </div> : ''}
        </div>
      
        </>
