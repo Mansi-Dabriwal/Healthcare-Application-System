@@ -3,10 +3,37 @@ import PatientNavBar from '../components/PatientNavBar';
 import '../styles/PatientPortal.css'
 
 function PatientPortal() {
+  let patientDiagnosisData = JSON.parse(localStorage.getItem("EntirePatientDetails"))
+  console.log(patientDiagnosisData);
+
     return (
+      
       <div>
-        {/* patient diagnosis data  */}
         <PatientNavBar></PatientNavBar><br></br>
+
+        {/* patient diagnosis data  */}
+        <div className='col-md-8' style={{ marginRight: "auto", marginLeft: "auto" }}>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Doctor Name</th>
+              <th scope="col">Medication Type</th>
+              <th scope="col">First Medicine</th>
+              <th scope="col">Second Medicine</th>
+              <th scope="col">Doctor's Remarks</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr>
+                <td>{patientDiagnosisData.lastDiagnose.doctorName}</td>
+                  <td>{patientDiagnosisData.lastDiagnose.medicationType}</td>
+                  <td>{patientDiagnosisData.lastDiagnose.medicine1}</td>
+                  <td>{patientDiagnosisData.lastDiagnose.medicine2}</td>
+                  <td>{patientDiagnosisData.lastDiagnose.remarks}</td>
+                </tr>
+          </tbody>
+        </table>
+      </div>
         <div><br></br>
           <h3 style={{"textAlign":"center"}}>Welcome to DOC101!</h3><br></br>
           <h4>What is the therapy process?</h4>
